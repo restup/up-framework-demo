@@ -1,0 +1,6 @@
+---
+applications:
+- name: up-demo
+  memory: 1G
+  random-route: true
+  path: target/up-demo-spring-boot-0.0.1-SNAPSHOT.jar
