@@ -3,6 +3,7 @@
 
 ## Getting started
 * clone this repository
+* Up! Framework has not yet been published. For now, you will have to clone Up! framework and install it locally ```mvn clean install```
 * ```cd up-demo-spring-boot``` 
 * ```mvn spring-boot:run``` 
 * ```open http://localhost:8080/universities```     
