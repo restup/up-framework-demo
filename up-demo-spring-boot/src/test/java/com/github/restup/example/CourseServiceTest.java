@@ -3,8 +3,8 @@ package com.github.restup.example;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.ExpectedDatabase;
-import com.github.restup.test.RestApiTest;
-import com.github.restup.test.RpcApiTest.Builder;
+import com.github.restup.test.RestApiAssertions;
+import com.github.restup.test.RpcApiAssertions.Builder;
 import com.github.restup.test.spring.AbstractMockMVCTest;
 import org.dbunit.dataset.Column;
 import org.dbunit.dataset.filter.IColumnFilter;
@@ -120,7 +120,7 @@ public class CourseServiceTest extends AbstractMockMVCTest {
     @DatabaseSetup(COURSE_XML)
     public void testRelationships() {
         // examples of fetching relationships between resources
-        RestApiTest.Builder api = builder("/courses/{courseId}/university", 5);
+        RestApiAssertions.Builder api = builder("/courses/{courseId}/university", 5);
         api.get().test("getCourseUniversity").ok();
 
         // and the reverse works as well

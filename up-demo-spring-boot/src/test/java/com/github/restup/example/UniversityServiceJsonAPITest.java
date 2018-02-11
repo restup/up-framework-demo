@@ -23,6 +23,7 @@ public class UniversityServiceJsonAPITest extends AbstractMockMVCTest {
         super(University.PLURAL_NAME, 1);
     }
 
+    @Override
     @Before
     public void before() {
         super.before();

@@ -1,25 +1,23 @@
 package com.github.restup.example;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.university.Course;
-import com.university.Student;
-import com.university.University;
-import com.github.restup.controller.ResourceController;
-import com.github.restup.controller.model.MediaType;
-import com.github.restup.registry.ResourceRegistry;
-import com.github.restup.registry.settings.RegistrySettings;
-import com.github.restup.repository.jpa.JpaRepository;
-import com.github.restup.repository.jpa.JpaRepositoryFactory;
-import com.github.restup.spring.mvc.controller.UpSpringMVCConfiguration;
+import java.io.Serializable;
+import javax.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
-
-import javax.persistence.EntityManager;
-import java.io.Serializable;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.restup.controller.ResourceController;
+import com.github.restup.controller.model.MediaType;
+import com.github.restup.registry.ResourceRegistry;
+import com.github.restup.repository.jpa.JpaRepository;
+import com.github.restup.repository.jpa.JpaRepositoryFactory;
+import com.github.restup.spring.mvc.controller.UpSpringMVCConfiguration;
+import com.university.Course;
+import com.university.Student;
+import com.university.University;
 
 @SpringBootApplication
 @EntityScan(basePackages = {"com.university"})
@@ -42,8 +40,8 @@ public class SpringBootDemoApplication {
     public ResourceRegistry registry(JpaRepository<?, ?> jpaRepository) {
 
         // build registry setting, minimally passing in a repository factory
-        ResourceRegistry registry = new ResourceRegistry(RegistrySettings.builder()
-                .repositoryFactory(new JpaRepositoryFactory(jpaRepository)));
+        ResourceRegistry registry = ResourceRegistry.builder()
+                .repositoryFactory(new JpaRepositoryFactory(jpaRepository)).build();
 
         // register university classes with defaults
         registry.registerResource(Course.class
