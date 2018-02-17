@@ -1,12 +1,15 @@
 
 # Up! Framework Spring Boot Demo
 
+## Try it out.
+
+This example is running on [heroku](https://up-demo-spring-boot.herokuapp.com/)
+
 ## Getting started
 * clone this repository
-* Up! Framework has not yet been published. For now, you will have to clone Up! framework and install it locally ```mvn clean install```
 * ```cd up-demo-spring-boot``` 
 * ```mvn spring-boot:run``` 
-* ```open http://localhost:8080/universities```     
+* ```open http://localhost:8080/universities```  
 
 ## Explore Up! Test Framework
 
