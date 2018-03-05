@@ -146,6 +146,7 @@
 
 
     <modules>
+        <module>up-demo-spring-boot-starter</module>
         <module>up-demo-spring-boot</module>
     </modules>
 

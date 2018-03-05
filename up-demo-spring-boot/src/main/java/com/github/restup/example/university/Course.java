@@ -1,21 +1,20 @@
-package com.university;
+package com.github.restup.example.university;
 
-import static com.university.Course.RESOURCE_NAME;
-import static com.university.Course.TABLE_NAME;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.github.restup.annotations.ApiName;
-import com.github.restup.annotations.field.CaseInsensitive;
-import com.github.restup.annotations.field.Relationship;
+import static com.github.restup.example.university.Course.RESOURCE_NAME;
+import static com.github.restup.example.university.Course.TABLE_NAME;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.SafeHtml;
 import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.github.restup.annotations.ApiName;
+import com.github.restup.annotations.field.CaseInsensitive;
+import com.github.restup.annotations.field.Relationship;
 
 @Entity(name = TABLE_NAME)
 @ApiName(value = RESOURCE_NAME)
@@ -26,7 +25,7 @@ public class Course {
     public static final String TABLE_NAME = RESOURCE_NAME;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     // use javax validations

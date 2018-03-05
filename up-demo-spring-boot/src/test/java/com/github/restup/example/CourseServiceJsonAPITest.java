@@ -3,7 +3,7 @@ package com.github.restup.example;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.ExpectedDatabase;
-import com.university.Course;
+import com.github.restup.example.university.Course;
 import com.github.restup.test.RestApiAssertions;
 import com.github.restup.test.spring.AbstractMockMVCTest;
 import org.dbunit.dataset.Column;

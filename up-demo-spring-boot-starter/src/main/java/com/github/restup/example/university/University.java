@@ -1,14 +1,14 @@
-package com.university;
+package com.github.restup.example.university;
 
-import static com.university.University.PLURAL_NAME;
-import static com.university.University.RESOURCE_NAME;
-import static com.university.University.TABLE_NAME;
+import static com.github.restup.example.university.University.PLURAL_NAME;
+import static com.github.restup.example.university.University.RESOURCE_NAME;
+import static com.github.restup.example.university.University.TABLE_NAME;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.SafeHtml;
 import org.hibernate.validator.constraints.SafeHtml.WhiteListType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -26,7 +26,7 @@ public class University {
 	public static final String TABLE_NAME = RESOURCE_NAME;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private final Long id;
 
 	// use javax validations

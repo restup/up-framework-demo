@@ -5,22 +5,20 @@ import javax.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.restup.controller.ResourceController;
 import com.github.restup.controller.model.MediaType;
+import com.github.restup.example.university.Course;
+import com.github.restup.example.university.Student;
+import com.github.restup.example.university.University;
 import com.github.restup.registry.ResourceRegistry;
 import com.github.restup.repository.jpa.JpaRepository;
 import com.github.restup.repository.jpa.JpaRepositoryFactory;
 import com.github.restup.spring.mvc.controller.UpSpringMVCConfiguration;
-import com.university.Course;
-import com.university.Student;
-import com.university.University;
 
 @SpringBootApplication
-@EntityScan(basePackages = {"com.university"})
 @Import(UpSpringMVCConfiguration.class)
 public class SpringBootDemoApplication {
 
@@ -44,7 +42,7 @@ public class SpringBootDemoApplication {
                 .repositoryFactory(new JpaRepositoryFactory(jpaRepository)).build();
 
         // register university classes with defaults
-        registry.registerResource(Course.class
+        registry.registerResources(Course.class
                 , Student.class
                 , University.class);
 

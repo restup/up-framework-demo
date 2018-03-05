@@ -8,12 +8,12 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
+import com.github.restup.example.university.Course;
 import com.github.restup.test.RestApiAssertions;
 import com.github.restup.test.spring.AbstractMockMVCTest;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.ExpectedDatabase;
-import com.university.Course;
 
 @SpringBootTest
 @AutoConfigureMockMvc

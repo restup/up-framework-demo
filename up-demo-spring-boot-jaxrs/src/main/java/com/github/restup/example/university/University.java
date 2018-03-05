@@ -1,8 +1,8 @@
-package com.university;
+package com.github.restup.example.university;
 
-import static com.university.University.PLURAL_NAME;
-import static com.university.University.RESOURCE_NAME;
-import static com.university.University.TABLE_NAME;
+import static com.github.restup.example.university.University.PLURAL_NAME;
+import static com.github.restup.example.university.University.RESOURCE_NAME;
+import static com.github.restup.example.university.University.TABLE_NAME;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

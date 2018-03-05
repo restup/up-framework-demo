@@ -1,6 +1,6 @@
 {
   "data": {
-    "id": "32",
+    "id": "${json-unit.regex}[0-9]+",
     "type": "course",
     "attributes": {
       "name": "Bar"

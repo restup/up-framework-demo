@@ -2,7 +2,7 @@ package com.github.restup.example;
 
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
-import com.university.University;
+import com.github.restup.example.university.University;
 import com.github.restup.test.spring.AbstractMockMVCTest;
 import org.junit.Before;
 import org.junit.Test;
