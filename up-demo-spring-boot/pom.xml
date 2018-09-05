@@ -39,7 +39,7 @@
 
         <dependency>
             <groupId>com.github.restup</groupId>
-            <artifactId>up-spring-mvc</artifactId>
+            <artifactId>up-spring-boot-starter</artifactId>
             <version>${up.version}</version>
         </dependency>
 
