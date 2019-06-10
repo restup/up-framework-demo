@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "ffd79ad6-1184-402d-a192-47a3c3316e33",
+		"name": "Up! Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Resource Discovery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				},
+				"description": "Resource Discovery"
+			},
+			"response": []
+		},
+		{
+			"name": "Content Negotiation: application/json",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/universities",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"universities"
+					]
+				},
+				"description": "application/json Header"
+			},
+			"response": []
+		},
+		{
+			"name": "Content-Negotiation: application/vnd.api+json",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/vnd.api+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/universities?fields=id",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"universities"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "id"
+						}
+					]
+				},
+				"description": "Up! content negotiation"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Resource Relationships",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/universities/1/courses",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"universities",
+						"1",
+						"courses"
+					]
+				},
+				"description": "resource relationships requested in path.  Get all courses for university with id 1"
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Resource relationships",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/universities/1/courses?filter[name][gte]=pr",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"universities",
+						"1",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "filter[name][gte]",
+							"value": "pr"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Resources",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/universities/1/courses?filter[name][gte]=pr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"universities",
+						"1",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "filter[name][gte]",
+							"value": "pr"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
