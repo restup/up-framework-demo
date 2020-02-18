@@ -44,7 +44,7 @@ public class SpringBootDemoApplication {
                 .repositoryFactory(new JpaRepositoryFactory(jpaRepository)).build();
 
         // register university classes with defaults
-        registry.registerResource(Course.class
+        registry.registerResources(Course.class
                 , Student.class
                 , University.class);
 
